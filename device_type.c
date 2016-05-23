@@ -103,7 +103,7 @@ PyObject *py_device_discover(PyObject *cls, PyObject *args, PyObject *kwds) {
         }
     }
 
-    count = hdhomerun_discover_find_devices_custom(target_ip, HDHOMERUN_DEVICE_TYPE_TUNER, HDHOMERUN_DEVICE_ID_WILDCARD, result_list, 64);
+    count = hdhomerun_discover_find_devices_custom_v2(target_ip, HDHOMERUN_DEVICE_TYPE_TUNER, HDHOMERUN_DEVICE_ID_WILDCARD, result_list, 64);
 
     if(count < 0) {
         PyErr_SetString(hdhomerun_device_error, "error sending discover request");
